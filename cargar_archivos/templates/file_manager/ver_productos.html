@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'file_manager/styles.css' %}">
+    <title>Ver Productos</title>
+</head>
+
+<body>
+    <h1>Lista de Productos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Código Producto</th>
+                <th>Nombre Producto</th>
+                <th>NIT Proveedor</th>
+                <th>Precio Compra</th>
+                <th>IVA Compra</th>
+                <th>Precio Venta</th>
+            </tr>
+        </thead>
+        <tbody> 
+            {% for producto in productos %} 
+            <tr>
+                <td>{{ producto.codigo_producto }}</td>
+                <td>{{ producto.nombre_producto }}</td>
+                <td>{{ producto.nitproveedor }}</td>
+                <td>{{ producto.precio_compra }}</td>
+                <td>{{ producto.ivacompra }}</td>
+                <td>{{ producto.precio_venta }}</td>
+            </tr> 
+            {% endfor %} 
+        </tbody>
+    </table>
+</body>
+</html>
